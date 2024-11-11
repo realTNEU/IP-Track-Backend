@@ -1,9 +1,7 @@
 const IPData = require('../models/ipDataModel');
 
 exports.saveIPData = async (req, res) => {
-    res.setHeader('Access-Control-Allow-Origin', 'https://ip-track-personal.vercel.app');
-    res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+    
     try {
         const ipData = new IPData(req.body);
         await ipData.save();
