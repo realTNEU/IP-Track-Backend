@@ -8,7 +8,8 @@ dotenv.config();
 connectDB();
 
 const app = express();
-app.use(cors());
+app.use(cors({ origin: 'https://ip-track-personal.vercel.app' }));
+app.options('*', cors());
 app.use(bodyParser.json());
 
 app.use('/api/ip', require('./routes/ipRoutes'));
